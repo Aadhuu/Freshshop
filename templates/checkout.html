@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+ <!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Checkout</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Cart</a></li>
+                        <li class="breadcrumb-item active">Checkout</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+    <!-- Start Cart  -->
+    <div class="cart-box-main">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-12 col-lg-12 mb-3">
+                    <div class="checkout-address">
+                        <div class="title-left">
+                            <h3>Billing address</h3>
+                        </div>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{form|crispy}}
+                            <button type="submit" class="btn hvr-hover">Place Order</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- End Cart -->
+{% endblock %}

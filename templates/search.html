@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Search List</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Search</a></li>
+                        <li class="breadcrumb-item active"> search</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="container p-5">
+            {% if products %}
+
+            <div class="row special-list">
+                 {% for i in products %}
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+
+                        <div class="box-img-hover">
+
+<!--                            <div class="type-lb">-->
+<!--                                <p class="sale">Sale</p>-->
+<!--                            </div>-->
+
+                            <img src="{{ i.image.url }}" class="" alt="Image" height="250px" width="100%">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="{% url 'shop:productdetail' i.id %}">Details</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>{{i.name}}</h4>
+                            <h5>{{i.price}}</h5>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+                    </div>
+                </div>
+{% else %}
+<h3 class="text-danger fs-2 fw-bold text-center" >No Search Results Found</h3>
+{% endif %}
+
+
+{% endblock %}
