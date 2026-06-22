@@ -1,4 +1,4 @@
-from django.contrib.auth import logout,authenticate,login
+
 from django.shortcuts import render,redirect
 from django.views import View
 from pyexpat.errors import messages
@@ -8,6 +8,7 @@ from shop.forms import SignUpForm
 from shop.forms import LoginForm
 from shop.forms import StockForm
 from shop.forms import ProductForm, CategoryForm
+from django.contrib.auth import logout,authenticate,login
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from shop.decorator import admin_required

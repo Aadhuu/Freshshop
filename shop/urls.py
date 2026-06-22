@@ -26,7 +26,7 @@ urlpatterns = [
     path('logout/', views.UserLogout.as_view(), name='userlogout'),
     path('addcategory/', views.AddCategory.as_view(), name='addcategory'),
     path('addproduct/', views.AddProduct.as_view(), name='addproduct'),
-    path('addstock', views.AddStock.as_view(), name='addstock'),
+    path('addstock/<int:i>', views.AddStock.as_view(), name='addstock'),
 
 
 ]
